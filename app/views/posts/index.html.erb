@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    
+    <h2>
+      <%= @author["first_name"]%>'s Posts
+    </h2>
+
+    <table class="table table-striped">
+      <thead>
+        <td><b>Title</b></td>
+        <td><b>Category</b></td>
+        <td class="text-center"><b>Read Post</b></td>
+        <td class="text-center"><b>Edit Post</b></td>
+      </thead>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post["title"]%></td>
+          <td><%= post["category"]%></td>
+          <td class="text-center"><%= link_to '<i class="fa fa-book"></i>'.html_safe, post_path(@author) %></td>
+          <td class="text-center"><%= link_to '<i class="fa fa-pencil-square"></i>'.html_safe, edit_post_path(@author) %></td>
+        </tr>
+      <% end %>
+      <tfoot>
+        <tr>
+          <td>
+            <%= link_to '<i class="fa fa-arrow-circle-left"></i> Go back'.html_safe, author_path(@author) %>
+          </td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td class="text-center"><%= link_to '<i class="fa fa-pencil"></i> Add a post'.html_safe, new_author_post_path %></td>
+        </tr>
+      </tfoot>
+    </table>
+
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+</div>
+
+</body>
+</html> 

@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    
+    <h2>
+      Add an author
+    </h2>
+
+    <% if @author.errors.any? %>
+      <% @author.errors.full_messages.each do |error| %>
+        <p>
+          <%= error %>
+        </p>
+      <% end %>
+    <% end %>
+
+    <%= form_for @author do |f| %>
+    <p>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, autofocus: true %>
+    </p>
+    <p>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </p>
+    <p>
+      <%= f.label :age %>
+      <%= f.text_field :age %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+    <% end %>
+
+    <p>
+      <%= link_to '<i class="fa fa-arrow-circle-left"></i> Go back'.html_safe, authors_path %>
+    </p>
+
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+</div>
+
+</body>
+</html> 
+
+

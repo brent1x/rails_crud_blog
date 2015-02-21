@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    
+    <h2>
+      Edit Author
+    </h2>
+
+  <p>
+    <%= form_for @author do |f| %>
+      <p>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </p>
+      <p>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </p>
+      <p>
+        <%= f.label :age %>
+        <%= f.text_field :age %>
+      </p>
+      <p><%= f.submit %></p>
+    <% end %>
+  </p>
+
+  <p>
+    <%= link_to '<i class="fa fa-trash-o"></i> Delete this author'.html_safe, author_path(@author), method: "DELETE", data: {confirm: "Are you sure?"} %>
+  </p>
+
+  <p>
+    <%= link_to '<i class="fa fa-arrow-circle-left"></i> Go back'.html_safe, author_path(@author) %>
+  </p>
+
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+</div>
+
+</body>
+</html> 

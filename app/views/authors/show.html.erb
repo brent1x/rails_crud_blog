@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    
+    <h2>
+      <%= @author["first_name"]%>'s Information
+    </h2>
+
+    <table class="table table-striped">
+      <thead>
+        <td><b>Name</b></td>
+        <td><b>Surname</b></td>
+        <td><b>Age</b></td>
+        <td class="text-center"><b>See posts</b></td>
+        <td class="text-center"><b>Edit</b></td>
+      </thead>
+        <tr>
+          <td><%= @author["first_name"]%></td>
+          <td><%= @author["last_name"]%></td>
+          <td><%= @author["age"]%></td>
+          <td class="text-center"><%= link_to '<i class="fa fa-info-circle"></i>'.html_safe, author_posts_path(@author) %></td>
+          <td class="text-center"><%= link_to '<i class="fa fa-pencil-square"></i>'.html_safe, edit_author_path(@author) %></td>
+        </tr>
+      <tfoot>
+        <tr>
+          <td>
+            <%= link_to '<i class="fa fa-arrow-circle-left"></i> Go back'.html_safe, authors_path %>
+          </td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tfoot>
+    </table>
+
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+</div>
+
+</body>
+</html> 

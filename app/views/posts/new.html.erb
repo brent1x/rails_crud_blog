@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    
+    <h2>
+      Create a new post for <%= @author["first_name"]%>
+    </h2>
+
+    <% if @post.errors.any? %>
+      <% @post.errors.full_messages.each do |error| %>
+        <p>
+          <%= error %>
+        </p>
+      <% end %>
+    <% end %>
+
+    <%= form_for @post do |f| %>
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title, autofocus: true %>
+    </p>
+    <p>
+      <%= f.label :body %>
+      <%= f.text_field :body %>
+    </p>
+    <p>
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+    <% end %>
+
+    <p>
+      <%= link_to '<i class="fa fa-arrow-circle-left"></i> Go back'.html_safe, author_path(@author) %>
+    </p>
+
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+</div>
+
+</body>
+</html> 
