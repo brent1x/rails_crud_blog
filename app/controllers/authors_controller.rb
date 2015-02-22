@@ -42,7 +42,6 @@ class AuthorsController < ApplicationController
 
   private
     def author_params
-      ## SHOULD THIS BE LAST NAME?
       params.require(:author).permit(:first_name, :last_name, :age)
     end
 

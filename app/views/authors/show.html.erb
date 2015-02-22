@@ -11,23 +11,26 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
     
+    <p>
     <h2>
       <%= @author["first_name"]%>'s Information
     </h2>
+    </p>
 
+    <p>
     <table class="table table-striped">
       <thead>
         <td><b>Name</b></td>
         <td><b>Surname</b></td>
         <td><b>Age</b></td>
-        <td class="text-center"><b>See posts</b></td>
-        <td class="text-center"><b>Edit</b></td>
+        <td class="text-center"><b>See Posts</b></td>
+        <td class="text-center"><b>Edit Author</b></td>
       </thead>
         <tr>
           <td><%= @author["first_name"]%></td>
           <td><%= @author["last_name"]%></td>
           <td><%= @author["age"]%></td>
-          <td class="text-center"><%= link_to '<i class="fa fa-info-circle"></i>'.html_safe, author_posts_path(@author) %></td>
+          <td class="text-center"><%= link_to '<i class="fa fa-eye"></i>'.html_safe, author_posts_path(@author) %></td>
           <td class="text-center"><%= link_to '<i class="fa fa-pencil-square"></i>'.html_safe, edit_author_path(@author) %></td>
         </tr>
       <tfoot>
@@ -42,6 +45,7 @@
         </tr>
       </tfoot>
     </table>
+    </p>
 
   </div>
   <div class="col-md-2"></div>

@@ -1,2 +1,38 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    
+    <p>
+      <h2>
+        <%= @post["title"] %> by <%= @author["first_name"]%>
+      </h2>
+    </p>
+
+    <p>
+      Filed in <%= @post["category"] %>
+    </p>
+    <p>
+      <%= @post["body"] %>
+    </p>
+
+    <p>
+      <%= link_to '<i class="fa fa-arrow-circle-left"></i> Go back'.html_safe, author_posts_path(@author) %>
+    </p>
+
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+</div>
+
+</body>
+</html> 

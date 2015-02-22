@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find params[:id]
-    @post.update_attributes book_params
+    @post.update_attributes post_params
     @author = @post.author
     if @post.save
       redirect_to post_path(@post)

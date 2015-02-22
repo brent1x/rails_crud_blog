@@ -26,8 +26,8 @@
         <tr>
           <td><%= post["title"]%></td>
           <td><%= post["category"]%></td>
-          <td class="text-center"><%= link_to '<i class="fa fa-book"></i>'.html_safe, post_path(@author) %></td>
-          <td class="text-center"><%= link_to '<i class="fa fa-pencil-square"></i>'.html_safe, edit_post_path(@author) %></td>
+          <td class="text-center"><%= link_to '<i class="fa fa-book"></i>'.html_safe, post_path(post) %></td>
+          <td class="text-center"><%= link_to '<i class="fa fa-pencil-square"></i>'.html_safe, edit_post_path(post) %></td>
         </tr>
       <% end %>
       <tfoot>
